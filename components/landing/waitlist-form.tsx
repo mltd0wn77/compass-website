@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase"
 
 import { toast } from "sonner"
 
-export function WaitlistForm() {
+export function WaitlistForm({ dict }: { dict: any }) {
     const [email, setEmail] = useState("")
     const [status, setStatus] = useState<"idle" | "loading" | "success">("idle")
 
@@ -18,7 +18,7 @@ export function WaitlistForm() {
 
         // Basic validation
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            toast.error("Please enter a valid email address")
+            toast.error(dict.waitlist_error_invalid_email)
             return
         }
 
@@ -32,7 +32,7 @@ export function WaitlistForm() {
             if (error) {
                 if (error.code === '23505') { // Unique violation
                     setStatus("success") // Treat duplicate as success to avoid leaking info/confusing user
-                    toast.success("You're already on the list!")
+                    toast.success(dict.waitlist_success_already_on_list)
                     return
                 }
                 throw error
@@ -40,11 +40,11 @@ export function WaitlistForm() {
 
             setStatus("success")
             setEmail("")
-            toast.success("Welcome to the waitlist!")
+            toast.success(dict.waitlist_success_welcome)
         } catch (error) {
             console.error('Error joining waitlist:', error)
             setStatus("idle")
-            toast.error("Something went wrong. Please try again.")
+            toast.error(dict.waitlist_error_generic)
         }
     }
 
@@ -52,7 +52,7 @@ export function WaitlistForm() {
         return (
             <div className="flex items-center gap-2 text-green-600 bg-green-50 px-4 py-2 rounded-full animate-in fade-in slide-in-from-bottom-2">
                 <CheckCircle2 className="w-5 h-5" />
-                <span className="font-medium">You're on the list! We'll be in touch.</span>
+                <span className="font-medium">{dict.waitlist_success}</span>
             </div>
         )
     }
@@ -61,7 +61,7 @@ export function WaitlistForm() {
         <form onSubmit={handleSubmit} className="flex w-full max-w-sm items-center space-x-2">
             <Input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={dict.waitlist_placeholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -69,7 +69,7 @@ export function WaitlistForm() {
                 disabled={status === "loading"}
             />
             <Button type="submit" disabled={status === "loading"}>
-                {status === "loading" ? "Joining..." : "Join Waitlist"}
+                {status === "loading" ? dict.waitlist_button_loading : dict.waitlist_button_idle}
                 {status === "idle" && <ArrowRight className="ml-2 h-4 w-4" />}
             </Button>
         </form>

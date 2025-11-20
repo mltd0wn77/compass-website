@@ -1,0 +1,25 @@
+{
+    "hero": {
+        "badge": "Bientôt sur iOS et Android",
+        "title_start": "Arrêtez de payer trop cher vos",
+        "title_highlight": "Courses",
+        "title_end": ".",
+        "description": "Grocery Compass compare automatiquement les prix dans des centaines de magasins locaux pour trouver l'option la moins chère pour votre liste de courses.",
+        "waitlist_placeholder": "Entrez votre email",
+        "waitlist_button_idle": "Rejoindre la liste",
+        "waitlist_button_loading": "Inscription...",
+        "waitlist_success": "Vous êtes sur la liste ! On vous contacte bientôt.",
+        "social_proof": "Rejoignez +2 000 acheteurs malins en attente du lancement."
+    },
+    "features": {
+        "discovery_title": "Découverte de magasins locaux",
+        "discovery_desc": "Nous indexons les prix de toutes les grandes chaînes et marchés locaux de votre région.",
+        "lists_title": "Listes de courses intelligentes",
+        "lists_desc": "Créez votre liste et laissez notre algorithme la diviser pour vous faire économiser le plus d'argent.",
+        "alerts_title": "Alertes prix instantanées",
+        "alerts_desc": "Soyez notifié quand vos articles préférés sont en promotion à proximité."
+    },
+    "footer": {
+        "rights": "Tous droits réservés."
+    }
+}

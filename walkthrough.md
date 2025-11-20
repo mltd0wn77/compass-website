@@ -26,6 +26,12 @@ I have successfully built the prelaunch landing page for Grocery Compass using N
 - **Database**: Migration script provided in `supabase/migrations/0000_init_waitlist.sql`.
 - **Security**: RLS policies included to allow public inserts but restrict reads.
 
+### 5. Improvements (Post-Audit)
+- **SEO**: Added proper metadata, Open Graph tags, and Twitter card info.
+- **Analytics**: Integrated Vercel Analytics for visitor tracking.
+- **UX**: Enhanced error handling with `sonner` toasts and email validation.
+- **Accessibility**: Added aria-labels to interactive elements.
+
 ## Verification Results
 
 ### Build Verification
@@ -51,6 +57,7 @@ I have successfully built the prelaunch landing page for Grocery Compass using N
     - Rename `.env.local.example` to `.env.local` and paste your credentials.
 
 2.  **Deploy**:
-    - Push to GitHub.
+    - Push to GitHub (Already done!).
     - Import project into Vercel.
     - Add the same Environment Variables in Vercel Project Settings.
+    - **Enable Analytics**: In Vercel dashboard, go to the "Analytics" tab and enable it.

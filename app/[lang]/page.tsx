@@ -1,7 +1,11 @@
 import { Hero } from "@/components/landing/hero"
 import { FeatureGrid } from "@/components/landing/feature-grid"
+import { getDictionary } from "./dictionaries"
+import { LanguageSwitcher } from "@/components/landing/language-switcher"
 
-export default function Home() {
+export default async function Home({ params: { lang } }: { params: { lang: "en" | "fr" } }) {
+  const dict = await getDictionary(lang)
+
   return (
     <main className="min-h-screen bg-white selection:bg-orange-100 selection:text-orange-900">
       <nav className="absolute top-0 left-0 right-0 z-50">
@@ -20,16 +24,16 @@ export default function Home() {
             </div>
             <span className="font-bold text-xl tracking-tight text-slate-900">Grocery Compass</span>
           </div>
-          {/* <Button variant="ghost" className="text-slate-600 hover:text-orange-600">Sign In</Button> */}
+          <LanguageSwitcher currentLang={lang} />
         </div>
       </nav>
 
-      <Hero />
-      <FeatureGrid />
+      <Hero dict={dict.hero} />
+      <FeatureGrid dict={dict.features} />
 
       <footer className="bg-white border-t border-slate-100 py-12">
         <div className="container px-4 mx-auto text-center text-slate-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Grocery Compass. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Grocery Compass. {dict.footer.rights}</p>
         </div>
       </footer>
     </main>

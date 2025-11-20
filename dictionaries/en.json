@@ -1,0 +1,25 @@
+{
+    "hero": {
+        "badge": "Coming Soon to iOS & Android",
+        "title_start": "Stop Overpaying for",
+        "title_highlight": "Groceries",
+        "title_end": ".",
+        "description": "Grocery Compass automatically compares prices across hundreds of local stores to find the cheapest option for your entire shopping list.",
+        "waitlist_placeholder": "Enter your email",
+        "waitlist_button_idle": "Join Waitlist",
+        "waitlist_button_loading": "Joining...",
+        "waitlist_success": "You're on the list! We'll be in touch.",
+        "social_proof": "Join 2,000+ smart shoppers waiting for launch."
+    },
+    "features": {
+        "discovery_title": "Local Store Discovery",
+        "discovery_desc": "We index prices from all major grocery chains and local markets in your area.",
+        "lists_title": "Smart Shopping Lists",
+        "lists_desc": "Build your list and let our algorithm split it to save you the most money.",
+        "alerts_title": "Instant Price Alerts",
+        "alerts_desc": "Get notified when your favorite items go on sale at nearby stores."
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}

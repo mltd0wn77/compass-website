@@ -1,25 +1,25 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, ShoppingBag, Zap } from "lucide-react"
 
-const features = [
-    {
-        title: "Local Store Discovery",
-        description: "We index prices from all major grocery chains and local markets in your area.",
-        icon: MapPin,
-    },
-    {
-        title: "Smart Shopping Lists",
-        description: "Build your list and let our algorithm split it to save you the most money.",
-        icon: ShoppingBag,
-    },
-    {
-        title: "Instant Price Alerts",
-        description: "Get notified when your favorite items go on sale at nearby stores.",
-        icon: Zap,
-    },
-]
+export function FeatureGrid({ dict }: { dict: any }) {
+    const features = [
+        {
+            title: dict.discovery_title,
+            description: dict.discovery_desc,
+            icon: MapPin,
+        },
+        {
+            title: dict.lists_title,
+            description: dict.lists_desc,
+            icon: ShoppingBag,
+        },
+        {
+            title: dict.alerts_title,
+            description: dict.alerts_desc,
+            icon: Zap,
+        },
+    ]
 
-export function FeatureGrid() {
     return (
         <section className="py-24 bg-slate-50">
             <div className="container px-4 mx-auto">

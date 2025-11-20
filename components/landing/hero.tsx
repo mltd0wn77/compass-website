@@ -2,28 +2,28 @@ import { WaitlistForm } from "./waitlist-form"
 import { Badge } from "@/components/ui/badge"
 import { ShoppingCart, TrendingDown } from "lucide-react"
 
-export function Hero() {
+export function Hero({ dict }: { dict: any }) {
     return (
         <section className="relative pt-20 pb-32 overflow-hidden">
             <div className="container px-4 mx-auto">
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
                     <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary/10 text-primary hover:bg-primary/20 mb-8">
                         <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
-                        Coming Soon to iOS & Android
+                        {dict.badge}
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6">
-                        Stop Overpaying for <span className="text-primary">Groceries</span>.
+                        {dict.title_start} <span className="text-primary">{dict.title_highlight}</span>{dict.title_end}
                     </h1>
 
                     <p className="text-xl text-slate-600 mb-10 max-w-2xl">
-                        Grocery Compass automatically compares prices across hundreds of local stores to find the cheapest option for your entire shopping list.
+                        {dict.description}
                     </p>
 
                     <div className="flex flex-col items-center w-full max-w-md mb-16">
-                        <WaitlistForm />
+                        <WaitlistForm dict={dict} />
                         <p className="text-xs text-slate-400 mt-4">
-                            Join 2,000+ smart shoppers waiting for launch.
+                            {dict.social_proof}
                         </p>
                     </div>
 
