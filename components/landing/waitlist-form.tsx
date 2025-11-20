@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 
+import { toast } from "sonner"
+
 export function WaitlistForm() {
     const [email, setEmail] = useState("")
     const [status, setStatus] = useState<"idle" | "loading" | "success">("idle")
@@ -13,6 +15,12 @@ export function WaitlistForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         if (!email) return
+
+        // Basic validation
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            toast.error("Please enter a valid email address")
+            return
+        }
 
         setStatus("loading")
 
@@ -24,6 +32,7 @@ export function WaitlistForm() {
             if (error) {
                 if (error.code === '23505') { // Unique violation
                     setStatus("success") // Treat duplicate as success to avoid leaking info/confusing user
+                    toast.success("You're already on the list!")
                     return
                 }
                 throw error
@@ -31,10 +40,11 @@ export function WaitlistForm() {
 
             setStatus("success")
             setEmail("")
+            toast.success("Welcome to the waitlist!")
         } catch (error) {
             console.error('Error joining waitlist:', error)
             setStatus("idle")
-            // Optional: Add error state/toast here
+            toast.error("Something went wrong. Please try again.")
         }
     }
 

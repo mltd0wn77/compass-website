@@ -6,7 +6,7 @@ export default function Home() {
     <main className="min-h-screen bg-white selection:bg-orange-100 selection:text-orange-900">
       <nav className="absolute top-0 left-0 right-0 z-50">
         <div className="container px-4 mx-auto py-6 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" aria-label="Grocery Compass Home">
             <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
               <svg
                 viewBox="0 0 24 24"
