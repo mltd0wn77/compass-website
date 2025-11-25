@@ -8,7 +8,18 @@ import { supabase } from "@/lib/supabase"
 
 import { toast } from "sonner"
 
-export function WaitlistForm({ dict }: { dict: any }) {
+interface WaitlistDict {
+    waitlist_error_invalid_email: string
+    waitlist_success_already_on_list: string
+    waitlist_success_welcome: string
+    waitlist_error_generic: string
+    waitlist_success: string
+    waitlist_placeholder: string
+    waitlist_button_loading: string
+    waitlist_button_idle: string
+}
+
+export function WaitlistForm({ dict }: { dict: WaitlistDict }) {
     const [email, setEmail] = useState("")
     const [status, setStatus] = useState<"idle" | "loading" | "success">("idle")
 

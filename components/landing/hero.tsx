@@ -1,94 +1,66 @@
-import { WaitlistForm } from "./waitlist-form"
-import { Badge } from "@/components/ui/badge"
-import { ShoppingCart, TrendingDown } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, Map } from "lucide-react"
 
-export function Hero({ dict }: { dict: any }) {
+interface HeroProps {
+    dict: {
+        title: string
+        subtitle: string
+        cta: string
+        secondaryCta: string
+    }
+}
+
+export function Hero({ dict }: HeroProps) {
     return (
-        <section className="relative pt-20 pb-32 overflow-hidden">
-            <div className="container px-4 mx-auto">
-                <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-                    <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary/10 text-primary hover:bg-primary/20 mb-8">
-                        <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
-                        {dict.badge}
+        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <div className="container px-4 mx-auto relative z-10">
+                <div className="max-w-4xl mx-auto text-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-sm font-medium mb-8 animate-fade-in-up">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                        </span>
+                        v1.0 Coming Soon
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6">
-                        {dict.title_start} <span className="text-primary">{dict.title_highlight}</span>{dict.title_end}
+                    <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-8 animate-fade-in-up animation-delay-100">
+                        <span className="text-gradient">{dict.title}</span>
                     </h1>
 
-                    <p className="text-xl text-slate-600 mb-10 max-w-2xl">
-                        {dict.description}
+                    <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
+                        {dict.subtitle}
                     </p>
 
-                    <div className="flex flex-col items-center w-full max-w-md mb-16">
-                        <WaitlistForm dict={dict} />
-                        <p className="text-xs text-slate-400 mt-4">
-                            {dict.social_proof}
-                        </p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-300">
+                        <Link
+                            href="#"
+                            className="w-full sm:w-auto px-8 py-4 bg-primary-gradient text-white rounded-2xl font-semibold shadow-lg shadow-orange-500/20 hover:shadow-orange-500/30 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                            {dict.cta}
+                            <ArrowRight className="w-5 h-5" />
+                        </Link>
+
+                        <Link
+                            href="#"
+                            className="w-full sm:w-auto px-8 py-4 glass text-slate-700 rounded-2xl font-semibold hover:bg-white/80 transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                            {dict.secondaryCta}
+                        </Link>
                     </div>
+                </div>
 
-                    {/* Abstract App Visual */}
-                    <div className="relative w-full max-w-5xl mx-auto">
-                        <div className="absolute -top-12 -left-12 w-72 h-72 bg-primary/10 rounded-full blur-3xl opacity-50 animate-pulse"></div>
-                        <div className="absolute -bottom-12 -right-12 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl opacity-50"></div>
-
-                        <div className="relative bg-slate-50/50 border border-slate-200/60 backdrop-blur-xl rounded-2xl p-4 shadow-2xl ring-1 ring-slate-900/5">
-                            <div className="aspect-[16/9] rounded-xl bg-white border border-slate-100 overflow-hidden flex items-center justify-center relative">
-                                {/* Mock UI Elements */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 opacity-50"></div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 w-full max-w-4xl relative z-10">
-                                    {/* Card 1 */}
-                                    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 flex flex-col gap-3">
-                                        <div className="h-8 w-8 rounded-lg bg-orange-100 flex items-center justify-center text-orange-600">
-                                            <ShoppingCart className="w-4 h-4" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <div className="h-2 w-24 bg-slate-100 rounded-full"></div>
-                                            <div className="h-2 w-16 bg-slate-100 rounded-full"></div>
-                                        </div>
-                                        <div className="mt-auto flex items-center justify-between">
-                                            <div className="h-4 w-12 bg-slate-100 rounded-full"></div>
-                                            <div className="h-6 w-16 bg-green-50 text-green-600 text-xs font-medium rounded-full flex items-center justify-center">
-                                                -$12.40
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Card 2 (Featured) */}
-                                    <div className="bg-white rounded-xl shadow-md border border-orange-100 p-4 flex flex-col gap-3 transform scale-105 ring-2 ring-orange-500/10">
-                                        <div className="flex justify-between items-start">
-                                            <div className="h-8 w-8 rounded-lg bg-orange-500 flex items-center justify-center text-white">
-                                                <TrendingDown className="w-4 h-4" />
-                                            </div>
-                                            <span className="bg-orange-100 text-orange-700 text-[10px] font-bold px-2 py-1 rounded-full">BEST DEAL</span>
-                                        </div>
-                                        <div className="space-y-2">
-                                            <div className="h-2 w-32 bg-slate-100 rounded-full"></div>
-                                            <div className="h-2 w-20 bg-slate-100 rounded-full"></div>
-                                        </div>
-                                        <div className="mt-auto pt-2 border-t border-slate-50">
-                                            <div className="flex justify-between items-center">
-                                                <span className="text-sm font-bold text-slate-900">$84.50</span>
-                                                <span className="text-xs text-slate-400 line-through">$112.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Card 3 */}
-                                    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 flex flex-col gap-3">
-                                        <div className="h-8 w-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
-                                            <ShoppingCart className="w-4 h-4" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <div className="h-2 w-24 bg-slate-100 rounded-full"></div>
-                                            <div className="h-2 w-16 bg-slate-100 rounded-full"></div>
-                                        </div>
-                                        <div className="mt-auto flex items-center justify-between">
-                                            <div className="h-4 w-12 bg-slate-100 rounded-full"></div>
-                                        </div>
-                                    </div>
+                {/* Glass Mockup */}
+                <div className="mt-20 relative max-w-5xl mx-auto animate-fade-in-up animation-delay-500">
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-20 h-full w-full pointer-events-none"></div>
+                    <div className="glass rounded-3xl p-4 border border-white/50 shadow-2xl transform rotate-x-12 perspective-1000">
+                        <div className="bg-slate-50 rounded-2xl overflow-hidden aspect-[16/9] relative flex items-center justify-center">
+                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+                            <div className="text-center p-8">
+                                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4 text-orange-600">
+                                    <Map className="w-8 h-8" />
                                 </div>
+                                <h3 className="text-2xl font-bold text-slate-800 mb-2">Active Run View</h3>
+                                <p className="text-slate-500">Map and route visualization placeholder</p>
                             </div>
                         </div>
                     </div>

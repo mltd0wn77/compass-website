@@ -26,11 +26,12 @@ I have successfully built the prelaunch landing page for Grocery Compass using N
 - **Database**: Migration script provided in `supabase/migrations/0000_init_waitlist.sql`.
 - **Security**: RLS policies included to allow public inserts but restrict reads.
 
-### 5. Improvements (Post-Audit)
-- **SEO**: Added proper metadata, Open Graph tags, and Twitter card info.
-- **Analytics**: Integrated Vercel Analytics for visitor tracking.
-- **UX**: Enhanced error handling with `sonner` toasts and email validation.
-- **Accessibility**: Added aria-labels to interactive elements.
+### 6. Phase 2 Features (Password & Localization)
+- **Password Protection**: Middleware intercepts requests. Access requires a cookie set via the `/login` page.
+- **Localization (i18n)**:
+  - URL-based routing: `/en` and `/fr`.
+  - Automatic language detection based on headers.
+  - Content managed in `dictionaries/en.json` and `fr.json`.
 
 ## Verification Results
 
@@ -40,13 +41,10 @@ I have successfully built the prelaunch landing page for Grocery Compass using N
 ```bash
 > compass-website@0.1.0 build
 > next build
-
-   ▲ Next.js 16.0.3 (Turbopack)
-
-   Creating an optimized production build ...
- ✓ Compiled successfully
- ...
- ✓ Generating static pages
+...
+Route (app)
+├ ƒ /[lang]
+└ ○ /login
 ```
 
 ### Next Steps for You
@@ -61,3 +59,4 @@ I have successfully built the prelaunch landing page for Grocery Compass using N
     - Import project into Vercel.
     - Add the same Environment Variables in Vercel Project Settings.
     - **Enable Analytics**: In Vercel dashboard, go to the "Analytics" tab and enable it.
+    - **Set Password**: Add `SITE_PASSWORD` and `SITE_PASSWORD_PROTECTION=true` to Vercel Environment Variables.

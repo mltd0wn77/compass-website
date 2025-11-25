@@ -1,23 +1,28 @@
 {
     "hero": {
-        "badge": "Coming Soon to iOS & Android",
-        "title_start": "Stop Overpaying for",
-        "title_highlight": "Groceries",
-        "title_end": ".",
-        "description": "Grocery Compass automatically compares prices across hundreds of local stores to find the cheapest option for your entire shopping list.",
-        "waitlist_placeholder": "Enter your email",
-        "waitlist_button_idle": "Join Waitlist",
-        "waitlist_button_loading": "Joining...",
-        "waitlist_success": "You're on the list! We'll be in touch.",
-        "social_proof": "Join 2,000+ smart shoppers waiting for launch."
+        "title": "Smart Grocery Navigation",
+        "subtitle": "Save time and money with optimized routes inside your favorite stores.",
+        "cta": "Get Started",
+        "secondaryCta": "Learn More"
     },
     "features": {
-        "discovery_title": "Local Store Discovery",
-        "discovery_desc": "We index prices from all major grocery chains and local markets in your area.",
-        "lists_title": "Smart Shopping Lists",
-        "lists_desc": "Build your list and let our algorithm split it to save you the most money.",
-        "alerts_title": "Instant Price Alerts",
-        "alerts_desc": "Get notified when your favorite items go on sale at nearby stores."
+        "title": "Why Grocery Compass?",
+        "optimization": {
+            "title": "Smart Routing",
+            "description": "Fastest, Cheapest, or Balanced - you choose how to shop. We optimize your path through the store."
+        },
+        "navigation": {
+            "title": "In-Store Navigation",
+            "description": "Turn-by-turn guidance inside the store. Never backtrack for a forgotten item again."
+        },
+        "lists": {
+            "title": "Smart Lists",
+            "description": "Beautiful lists that sync across your devices. Track your progress and savings in real-time."
+        },
+        "savings": {
+            "title": "Track Savings",
+            "description": "See exactly how much time and money you save on every run."
+        }
     },
     "footer": {
         "rights": "All rights reserved."
