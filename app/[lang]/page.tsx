@@ -3,7 +3,8 @@ import { FeatureGrid } from "@/components/landing/feature-grid"
 import { getDictionary } from "./dictionaries"
 import { LanguageSwitcher } from "@/components/landing/language-switcher"
 
-export default async function Home({ params: { lang } }: { params: { lang: "en" | "fr" } }) {
+export default async function Home({ params }: { params: Promise<{ lang: "en" | "fr" }> }) {
+  const { lang } = await params
   const dict = await getDictionary(lang)
 
   return (
