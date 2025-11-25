@@ -26,5 +26,13 @@
     },
     "footer": {
         "rights": "All rights reserved."
-    }
+    },
+    "waitlist_error_invalid_email": "Please enter a valid email address.",
+    "waitlist_success_already_on_list": "You are already on the waitlist!",
+    "waitlist_success_welcome": "Welcome to the waitlist!",
+    "waitlist_error_generic": "Something went wrong. Please try again.",
+    "waitlist_success": "You're on the list!",
+    "waitlist_placeholder": "Enter your email",
+    "waitlist_button_loading": "Joining...",
+    "waitlist_button_idle": "Join Waitlist"
 }

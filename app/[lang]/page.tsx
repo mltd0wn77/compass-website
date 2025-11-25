@@ -15,28 +15,28 @@ export default async function Home({ params }: { params: Promise<{ lang: "en" | 
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-red-400/20 blur-[100px] animate-pulse animation-delay-2000"></div>
       </div>
 
-      <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/20">
-        <div className="container px-4 mx-auto py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2" aria-label="Grocery Compass Home">
-            <div className="w-8 h-8 bg-primary-gradient rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/20">
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
+        <div className="glass rounded-full border border-white/40 shadow-xl shadow-orange-500/5 px-6 py-3 flex items-center justify-between backdrop-blur-xl bg-white/60">
+          <div className="flex items-center gap-3" aria-label="Grocery Compass Home">
+            <div className="w-8 h-8 bg-primary-gradient rounded-full flex items-center justify-center shadow-lg shadow-orange-500/20">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="3"
-                className="w-5 h-5 text-white"
+                className="w-4 h-4 text-white"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
               </svg>
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-900">Grocery Compass</span>
+            <span className="font-bold text-lg tracking-tight text-slate-900">Grocery Compass</span>
           </div>
           <LanguageSwitcher currentLang={lang} />
         </div>
       </nav>
 
       <div className="relative z-10">
-        <Hero dict={dict.hero} />
+        <Hero dict={dict} />
         <FeatureGrid dict={dict.features} />
 
         <footer className="bg-white/50 backdrop-blur-sm border-t border-slate-200 py-12">

@@ -26,5 +26,13 @@
     },
     "footer": {
         "rights": "Tous droits réservés."
-    }
+    },
+    "waitlist_error_invalid_email": "Veuillez entrer une adresse email valide.",
+    "waitlist_success_already_on_list": "Vous êtes déjà sur la liste d'attente !",
+    "waitlist_success_welcome": "Bienvenue sur la liste d'attente !",
+    "waitlist_error_generic": "Une erreur s'est produite. Veuillez réessayer.",
+    "waitlist_success": "Vous êtes inscrit !",
+    "waitlist_placeholder": "Entrez votre email",
+    "waitlist_button_loading": "Inscription...",
+    "waitlist_button_idle": "Rejoindre"
 }
